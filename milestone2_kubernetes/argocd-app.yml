@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: milestone2-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/https://github.com/Toon-unix/milestone2.git
+    targetRevision: main
+    path: milestone2_kubernetes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
