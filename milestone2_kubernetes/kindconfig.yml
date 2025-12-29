@@ -9,16 +9,16 @@ nodes:
       kubeletExtraArgs:
         node-labels: "ingress-ready=true"
   extraPortMappings:
-  - containerPort: 30080
+  - containerPort: 30080 # NGINX Ingress HTTP
     hostPort: 9180
     protocol: TCP
-  - containerPort: 30562
+  - containerPort: 30562 # NGINX Ingress HTTPS
     hostPort: 9562
     protocol: TCP
-  - containerPort: 30090
+  - containerPort: 30090 # Prometheus UI
     hostPort: 9090
     protocol: TCP
-  - containerPort: 30091
+  - containerPort: 30091 # ArgoCD HTTP
     hostPort: 8000
     protocol: TCP
 
