@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: docks1337/milestone2-nginx:v2
+        image: docks1337/milestone2-nginx:v3
         imagePullPolicy: Always
         ports:
         - containerPort: 80
